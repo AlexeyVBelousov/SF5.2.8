@@ -4,7 +4,7 @@ namespace SF5._2._8
 {
     class Program
     {
-        static int[] GetArrayFromConsole(int size)
+        static int[] GetArrayFromConsole(int size = 5)
         {
             var result = new int[size];
 
