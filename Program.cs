@@ -19,7 +19,10 @@ namespace SF5._2._8
         static void ShowArray(int [] array, bool tosort = false)
         {
             if (tosort)
-                array = SortArray(array);
+            {
+                var temparray = SortArray(array);
+                array = temparray;
+            }
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -49,7 +52,7 @@ namespace SF5._2._8
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите размер массива для ввода и сортировки:");
+            Console.WriteLine("Введите размер массива для ввода и (возможно) сортировки:");
             int arraysize = int.Parse(Console.ReadLine());
             Console.WriteLine("Cортировать массив? (Да/Нет):");
             string sortsign = Console.ReadLine();
