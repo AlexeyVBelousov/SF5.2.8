@@ -18,15 +18,16 @@ namespace SF5._2._8
         }
         static void ShowArray(int [] array, bool tosort = false)
         {
+            var temp = array;
+
             if (tosort)
             {
-                var temparray = SortArray(array);
-                array = temparray;
+                temp = SortArray(array);
             }
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < temp.Length; i++)
             {
-                Console.WriteLine("Элемент массива номер {0}: {1}", i + 1, array[i]);
+                Console.WriteLine("Элемент массива номер {0}: {1}", i + 1, temp[i]);
             }
         }
 
