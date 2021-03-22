@@ -16,11 +16,14 @@ namespace SF5._2._8
 
             return result;
         }
-        static void PrintArrayToConsole(int [] array)
+        static void ShowArray(int [] array, bool tosort = false)
         {
+            if (tosort)
+                array = SortArray(array);
+
             for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine("Элемент отсортированного массива номер {0}: {1}", i + 1, array[i]);
+                Console.WriteLine("Элемент массива номер {0}: {1}", i + 1, array[i]);
             }
         }
 
@@ -48,10 +51,13 @@ namespace SF5._2._8
         {
             Console.WriteLine("Введите размер массива для ввода и сортировки:");
             int arraysize = int.Parse(Console.ReadLine());
+            Console.WriteLine("Cортировать массив? (Да/Нет):");
+            string sortsign = Console.ReadLine();
+
+            bool dosort = (sortsign == "Да");
 
             var array = GetArrayFromConsole(arraysize);
-            var sortedarray = SortArray(array);
-            PrintArrayToConsole(sortedarray);
+            ShowArray(array, dosort);
         }
     }
 }
